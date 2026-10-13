@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Asciiator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Asci<span>iator</span></h1>
+  <p class="sub">Made By 44devs</p>
+</header>
+
+<main>
+
+  <section class="panel">
+    <div class="tabs">
+      <button class="tab active" data-mode="media" type="button">Media</button>
+      <button class="tab" data-mode="text" type="button">Text</button>
+    </div>
+
+    <div id="mediaPane" class="pane">
+      <label id="drop" class="drop">
+        <input id="file" type="file" accept="image/*,video/*" hidden>
+        <strong>Drop a file</strong>
+        <span>png · jpg · gif · webp · mp4 · webm</span>
+      </label>
+    </div>
+
+    <div id="textPane" class="pane" hidden>
+      <textarea id="textInput" spellcheck="false">Asciiator</textarea>
+      <label class="field">
+        <span>Font</span>
+        <input id="fontInput" type="text" value="bold 110px sans-serif" spellcheck="false">
+      </label>
+    </div>
+
+    <div class="controls">
+
+      <label class="field">
+        <span>Columns <b id="colsVal">100</b></span>
+        <input id="cols" type="range" min="10" max="300" value="100">
+      </label>
+
+      <label class="field">
+        <span>Rows <b id="rowsVal">auto</b></span>
+        <input id="rows" type="range" min="0" max="300" value="0">
+      </label>
+
+      <label class="field">
+        <span>Characters</span>
+        <select id="charset">
+          <option value="classic">classic</option>
+          <option value="soft">soft</option>
+          <option value="blocks">blocks</option>
+          <option value="dots">dots</option>
+          <option value="binary">binary</option>
+          <option value="minimal">minimal</option>
+          <option value="custom">custom</option>
+        </select>
+      </label>
+
+      <label class="field" id="customWrap" hidden>
+        <span>Custom set</span>
+        <input id="charsCustom" type="text" value=" .:-=+*#%@" spellcheck="false">
+      </label>
+
+      <label class="field">
+        <span>Brightness</span>
+        <input id="bright" type="range" min="-128" max="128" value="0">
+      </label>
+
+      <label class="field">
+        <span>Contrast</span>
+        <input id="contrast" type="range" min="0.2" max="3" step="0.05" value="1">
+      </label>
+
+      <label class="field">
+        <span>FPS <b id="fpsVal">15</b></span>
+        <input id="fps" type="range" min="1" max="30" value="15">
+      </label>
+
+      <label class="field">
+        <span>Duration (s) <b id="durVal">2</b></span>
+        <input id="dur" type="range" min="1" max="15" value="2">
+      </label>
+
+      <div class="checks">
+        <label class="check"><input id="invert" type="checkbox"><span>Invert</span></label>
+        <label class="check"><input id="color" type="checkbox"><span>Color</span></label>
+        <label class="check"><input id="animate" type="checkbox" checked><span>Animate</span></label>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="panel out-panel">
+    <div class="bar">
+      <button id="copyBtn" type="button">Copy</button>
+      <button id="txtBtn" type="button">.txt</button>
+      <button id="htmlBtn" type="button">.html</button>
+      <button id="pngBtn" type="button">.png</button>
+      <button id="gifBtn" type="button">.gif</button>
+      <button id="webmBtn" type="button">.webm / .mp4</button>
+      <span id="status"></span>
+    </div>
+    <pre id="out"></pre>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
